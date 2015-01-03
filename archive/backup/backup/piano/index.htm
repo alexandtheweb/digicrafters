@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+
+	<meta charset="UTF-8">
+	<title>DigiCrafters Project 2 - Very Fruity Piano</title>	
+	<link rel="stylesheet" href="/css/projects.css">
+	<style type="text/css">
+		#piano {
+			background-color: #fff;
+			border-top: 1px solid #000;
+			width: 760px;
+			padding: 0 20px 20px;
+			overflow: hidden;
+			margin: 0 auto;
+			box-shadow: 1px 1px 4px rgba(0,0,0,0.6);	
+		}
+
+		.key {
+			float: left;
+			height: 250px;
+			width: 80px;
+			margin-left: 30px;
+			border-right: 1px solid #ccc;
+			border-left: 10px solid #ccc;
+			border-bottom: 10px solid #000;
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>	
+	<script src="scripts/jquery.hotkeys.js"></script>
+	<script src='scripts/jquery.jsmovie.min.js'></script>
+	<script>
+		$(document).ready(function() {  
+
+			var wPiano = new Audio("audio/piano-a.wav"),
+				aPiano = new Audio("audio/piano-b.wav"), 
+				sPiano = new Audio("audio/piano-c.wav"), 
+				dPiano = new Audio("audio/piano-d.wav"), 
+				fPiano = new Audio("audio/piano-e.wav"), 
+				gPiano = new Audio("audio/piano-f.wav"); 
+
+			var pianoSounds = [wPiano,aPiano,sPiano,dPiano,fPiano,gPiano];
+			var keyBindings = ['W','A','S','D','F','G'];
+
+
+
+		    $(document).bind('keydown',function(evt) {
+
+				var keyPressed = String.fromCharCode(evt.keyCode);
+				
+				if ($.inArray(keyPressed, keyBindings) !== -1) {
+					//$('.key-'+ keyPressed + '').offset('play');
+
+					var iPiano = $.inArray(keyPressed, keyBindings);
+					
+
+
+					if(pianoSounds[iPiano].currentTime > 0) {
+						pianoSounds[iPiano].currentTime = 0;
+						pianoSounds[iPiano].play();
+					} else {
+						pianoSounds[iPiano].play();
+					}
+			    }
+
+		    });		
+		});
+	</script>
+</head>
+<body>
+	<div id="back"><a href="project2.htm">GO BACK</a></div>
+	<div id="content">
+		<h1>DigiCrafters Project 2:<br>Very Fruity Piano</h1>
+		<div id="piano">
+			<div class="key key-W"></div>
+			<div class="key key-A"></div>
+			<div class="key key-S"></div>
+			<div class="key key-D"></div>
+			<div class="key key-F"></div>
+			<div class="key key-G"></div>
+		</div>	
+	</div>	
+</body>
+</html>

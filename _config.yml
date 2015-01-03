@@ -1,0 +1,12 @@
+# Site settings
+title: Digicrafters
+email: 
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.digicrafters.co.uk" # the base hostname & protocol for your site
+exclude: [CNAME, 'archive']
+twitter_username: 
+github_username:  
+
+# Build settings
+markdown: kramdown

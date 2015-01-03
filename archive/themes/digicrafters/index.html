@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-72906-5']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>	
+<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+{% if meta.description %}
+<meta name="description" content="{{ meta.description }}"> 
+{% endif %}{% if meta.robots %}
+<meta name="robots" content="{{ meta.robots }}">
+{% endif %}
+<meta name="viewport" content="width=device-width">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="{{ theme_url }}/css/bootstrap.css" rel="stylesheet">
+<link href="{{ theme_url }}/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<header class="nav-wrapper">
+	<div class="container">
+		<div class="row-fluid">
+			<h1 class="span4 rotated"><a href="/">DigiCrafters</a></h1>
+			<div class="span8">
+				<nav class="hidden-phone">
+					<a class="arrow_box" href="/">The Projects</a>
+					<a class="arrow_box" href="{{ base_url }}/about">About us</a>	
+					<a class="arrow_box" href="{{ base_url }}/workshops">Workshops</a>
+					<a class="arrow_box" href="{{ base_url }}/kits">The Kits</a>
+				</nav>
+				<nav class="visible-phone nav-mobile">
+					<a href="#menu-mobile" id="menu-trigger">Menu</a>
+					<div id="menu-mobile" class="menu-mobile">
+						<a href="/">The Projects</a>
+						<a href="{{ base_url }}/about">About us</a>
+						<a href="{{ base_url }}/workshops">Workshops</a>
+						<a href="{{ base_url }}/kits">The Kits</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+{{content}}
+<footer id="footer" class="wrapper wrapper-alt2">
+	<div class="container">
+		<div class="row-fluid">
+			Built in 2013 by Alex, Andy, Marie and the students at the Self-Managed Learning College. <br>
+			<small>Homepage illustration by <a href="http://www.sheepfilms.co.uk" target="_blank">Dave Packer</a> and Alex.</small>
+		</div>
+	</div>	
+</footer>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+	if (typeof jQuery == 'undefined')
+	{
+	    document.write(unescape("%3Cscript src='{{ theme_url }}/js/jquery.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+	</script>
+	<script src="{{ theme_url }}/js/bootstrap.min.js"></script>
+	<script src="{{ theme_url }}/js/common.js"></script>
+</body>
+</html>
